@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arama Sayfası</title>
+    <script>
+        function search() {
+            var searchTerm = document.getElementById("searchInput").value;
+            var searchTermElement = document.createElement("p");
+            var searchTermText = document.createTextNode(searchTerm);
+            searchTermElement.appendChild(searchTermText);
+            document.getElementById("result").innerHTML = ""; // Önceki içeriği temizle
+            document.getElementById("result").appendChild(searchTermElement); // Kullanıcı girişini ekler
+        }
+    </script>
+</head>
+<body>
+    <div id="content"> 
+        <form onsubmit="event.preventDefault(); search();">
+            <input type="text" id="searchInput" name="search_term" placeholder="Arama terimini girin">
+            <button type="submit">Ara</button>
+        </form>
+        <div id="result"></div>
+    </div>
+</body>
+</html>
